@@ -1,0 +1,158 @@
+{% extends 'header1.html' %}
+{% block content %}
+{% load static %}
+
+<section class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block">
+					<div class="divider mb-3"></div>
+					<span class="text-uppercase text-sm letter-spacing ">Valor, Pride, & Integrity</span>
+					<h1 class="mb-3 mt-3">Your</h1>
+					<h1 class="mb-3 mt-3">Trusted</h1>
+					<h1 class="mb-3 mt-3">Protectors</h1>
+					
+					<p class="mb-4 pr-5">United we stand, Divided we fall.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-law-document" style = "font-size: 400%;"></i>
+						</div>
+						<h4 class="mb-3">Add FIR</h4>
+						<p class="mb-4">Currently you can only access information which is only accessible to visitors. Please login to retrieve the data for specific desgination..</p>
+						<a href="{% url 'add-FIR' %}" class="btn btn-main btn-round-full">Proceed</a>
+					</div> 
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-eye" style = "font-size: 400%;"></i>
+						</div>
+						<h4 class="mb-3">View FIR Status</h4>
+						<p class="mb-4">Currently you can only access information which is only accessible to visitors. Please Proceed to retrieve the data for specific desgination..</p>
+						<a href="{% url 'view-FIR' %}" class="btn btn-main btn-round-full">Proceed</a>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-warning-alt" style = "font-size: 400%;"></i>
+						</div>
+						<h4 class="mb-3">Add Complaint</h4>
+						<p class="mb-4">Currently you can only access information which is only accessible to visitors. Please Proceed to retrieve the data for specific desgination..</p>
+						<a href="{% url 'add-com' %}" class="btn btn-main btn-round-full">Proceed</a>
+					</div>
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-eye-alt" style = "font-size: 400%;"></i>
+						</div>
+						<h4 class="mb-3">View Complaint Status</h4>
+						<p class="mb-4">Currently you can only access information which is only accessible to visitors. Please Proceed to retrieve the data for specific desgination..</p>
+						<a href="#" class="btn btn-main btn-round-full">Proceed</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-map" style = "font-size: 400%;"></i>
+						</div>
+						<h4 class="mb-3">Search Police Station</h4>
+						<p class="mb-4">Currently you can only access information which is only accessible to visitors. Please Proceed to retrieve the data for specific desgination..</p>
+						<a href="{% url 'search-station' %}" class="btn btn-main btn-round-full">Proceed</a>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section about">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img">
+					<img src="{% static 'images/about/badge (2).jpg' %}" style="width : 400px; height : 300px " class="img-fluid">
+					<img src="{% static 'images/about/gun(2).jpg' %}" style="width : 400px; height : 300px " class="img-fluid mt-4">
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img mt-4 mt-lg-0">
+					<img src="{% static 'images/about/law1.jpg' %}" style="width : 400px; height : 500px;" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="about-content pl-4 mt-4 mt-lg-0">
+					<h2 class="title-color">Help us to improve the system</h2>
+					<p class="mt-4 mb-5">People's participation will strengthen the law enforcement department, we request you to provide us feedback.</p>
+					<a href="#" class="btn btn-main btn-round-full">Give Feedback</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cta-section ">
+	<div class="container">
+		<div class="cta position-relative">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-doctor"></i>
+						<span class="h3">58</span>k
+						<p>Cases Solved</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-flag"></i>
+						<span class="h3">1000</span>+
+						<p>Working Force</p>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-badge"></i>
+						<span class="h3">30</span>+
+						<p>Special Agents</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-globe"></i>
+						<span class="h3">20</span>
+						<p>Police Stations</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
