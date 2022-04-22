@@ -115,9 +115,9 @@ def view_FIR(request):
     FIRs= FIR.objects.filter(applicant=uid)
     return render(request,'view-FIR.html',{'uid':uid,'FIRs':FIRs})
 
-def view_one_FIR(request):
+def view_one_FIR(request,pk):
     uid = User.objects.get(email=request.session['email'])
-    fir=FIR.objects.get(id=1)
+    fir=FIR.objects.get(id=pk)
     return render(request, 'view-one-FIR.html',{'uid':uid,'fir':fir})
 
 def search_station(request):
@@ -149,14 +149,11 @@ def add_com(request):
         return render(request,'add_com.html',{'uid':uid,'stationary':stationary,'msg':msg})
     return render(request,'add_com.html',{'uid':uid,'stationary':stationary})
 
-
-# Commissioner Block
-
-
-# Inspector Block
+def feedback(request):
+   uid = User.objects.get(email=request.session['email'])
+   return render(request,'feedback.html',{'uid':uid})
 
 
-# Admin Block
 
 
 # Header Block
@@ -189,7 +186,7 @@ def password(request):
     return render(request,'password.html',{'uid':uid})
 
 
-def logout(request):
+def logout(request): 
     del request.session['email']
     return redirect('index')
 

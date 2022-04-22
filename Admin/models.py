@@ -6,7 +6,7 @@ from myapp.models import *
 class Admin(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
-    user_id = models.CharField(max_length=20)
+    user_id = models.CharField(max_length=20, unique=True)
     password = models.CharField(max_length=10)
     email = models.EmailField(unique=True)
     pic = models.FileField(upload_to = 'Profile', default='default.jpg')

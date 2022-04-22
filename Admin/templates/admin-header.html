@@ -38,10 +38,14 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-						<a class="nav-link active" href="{% url 'view-profile' %}">
-							<img src="{{uid.pic.url}}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
+						<a class="nav-link active" href="">
+							{% if adm.pic.url %}
+							<img src="{{adm.pic.url}}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
+							{% else %}
+							<img src="{% static 'default.jpg' %}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
+							{% endif %}
 						</a>
-						<span class="h4" style = "color:aliceblue">{{uid.fname}} {{uid.lname}}</span>
+						<span class="h4" style = "color:aliceblue">{{adm.fname}} {{adm.lname}}</span>
 					</div>
 				</div>
 			</div>
@@ -58,17 +62,17 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link active" href="{% url 'home' %}">
+				<a class="nav-link active" href="">
 					<span class="nav-link-text">Home</span>
 				  </a>
 			  </li>
               <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile<i class="icofont-thin-down"></i></a>
 				<ul class="dropdown-menu" aria-labelledby="dropdown03">
-					<li><a class="dropdown-item" href="{% url 'view-profile' %}">View Profile</a></li>
-					<li><a class="dropdown-item" href="{% url 'edit-profile' %}">Edit Profile</a></li>
-					<li><a class="dropdown-item" href="{% url 'password' %}">Change Password</a></li>
-					<li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+					<li><a class="dropdown-item" href="">View Profile</a></li>
+					<li><a class="dropdown-item" href="">Edit Profile</a></li>
+					<li><a class="dropdown-item" href="">Change Password</a></li>
+					<li><a class="dropdown-item" href="{% url 'admin-logout' %}">Logout</a></li>
 				</ul>
 			  </li>
 			</ul>
