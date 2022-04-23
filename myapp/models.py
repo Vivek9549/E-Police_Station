@@ -22,6 +22,7 @@ class Station(models.Model):
         return self.station
 
 class FIR(models.Model):
+    
     applicant= models.ForeignKey(User,on_delete=models.CASCADE)
     police= models.ForeignKey(Station,on_delete=models.CASCADE)
     date= models.CharField(max_length=50,null=True,blank=True)
@@ -39,7 +40,7 @@ class FIR(models.Model):
     evi=models.FileField(upload_to='Evidence', null = True,blank=True)
     sfname=models.CharField(max_length=50, null=True,blank=True)
     slname=models.CharField(max_length=50, null=True,blank=True)
-    sdetail=models.TextField(null = True)
+    sdetail=models.TextField(null=True,blank=True)
     status=models.BooleanField(default=False)
 
 

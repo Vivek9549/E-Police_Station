@@ -25,3 +25,4 @@ def admin_login(request):
 def admin_logout(request):
    del request.session['email']
    return redirect('index') 
+

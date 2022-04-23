@@ -86,26 +86,46 @@ def add_FIR(request):
     stationary = Station.objects.all()
     if request.method == 'POST':
         stat = Station.objects.get(id=request.POST['police'])
-        FIR.objects.create(
-            applicant=uid,
-            date=request.POST['date'],
-            idate=request.POST['rdate'],
-            time=request.POST['time'],
-            address=request.POST['address'],
-            landmark=request.POST['landmark'],
-            charge=request.POST['charge'],
-            victim=request.POST['victim'],
-            ifname=request.POST['fname'],
-            ilname=request.POST['lname'],
-            dob=request.POST['dob'],
-            iaddress=request.POST['info_address'],
-            sfname=request.POST['sname'],
-            slname=request.POST['slname'],
-            sdetail=request.POST['sdetail'],
-            evi=request.FILES['evi'],
-            iid=request.FILES['ID'],
-            police=stat
-        )
+        if 'evi' and 'ID' in request.FILES:
+            FIR.objects.create(
+                applicant=uid,
+                date=request.POST['date'],
+                idate=request.POST['rdate'],
+                time=request.POST['time'],
+                address=request.POST['address'],
+                landmark=request.POST['landmark'],
+                charge=request.POST['charge'],
+                victim=request.POST['victim'],
+                ifname=request.POST['fname'],
+                ilname=request.POST['lname'],
+                dob=request.POST['dob'],
+                iaddress=request.POST['info_address'],
+                sfname=request.POST['sname'],
+                slname=request.POST['slname'],
+                sdetail=request.POST['sdetail'],
+                evi=request.FILES['evi'],
+                iid=request.FILES['ID'],
+                police=stat
+            )
+        else:
+            FIR.objects.create(
+                applicant=uid,
+                date=request.POST['date'],
+                idate=request.POST['rdate'],
+                time=request.POST['time'],
+                address=request.POST['address'],
+                landmark=request.POST['landmark'],
+                charge=request.POST['charge'],
+                victim=request.POST['victim'],
+                ifname=request.POST['fname'],
+                ilname=request.POST['lname'],
+                dob=request.POST['dob'],
+                iaddress=request.POST['info_address'],
+                sfname=request.POST['sname'],
+                slname=request.POST['slname'],
+                sdetail=request.POST['sdetail'],
+                police=stat
+                )
         msg = 'FIR Added'
         return render(request,'add_FIR.html',{'uid':uid,'stationary':stationary,'msg':msg})
     return render(request,'add_FIR.html',{'uid':uid,'stationary':stationary})
