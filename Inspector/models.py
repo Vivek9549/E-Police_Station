@@ -1,9 +1,10 @@
 from django.db import models
 from myapp.models import *
+from Admin.models import *
 
 # Create your models here.
 
-class Admin(models.Model):
+class Ins(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     user_id = models.CharField(max_length=20, unique=True)
@@ -13,4 +14,3 @@ class Admin(models.Model):
 
     def __str__(self):
         return self.fname + " " + self.lname
-        

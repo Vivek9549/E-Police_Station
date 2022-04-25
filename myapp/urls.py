@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path
 from . import views
 urlpatterns = [
@@ -16,6 +15,7 @@ urlpatterns = [
     path('view-one-FIR/<int:pk>',views.view_one_FIR,name='view-one-FIR'),
     path('search-station/',views.search_station,name='search-station'),
     path('add-com/',views.add_com,name='add-com'),
-    path('feedback/',views.feedback,name='feedback') 
+    path('feedback/',views.feedback,name='feedback'),
+    path('view-com/',views.view_com,name='view-com'),
 
 ]

@@ -5,8 +5,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
   <meta name="author" content="themefisher.com">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Metroploitan Police Service </title>
 
@@ -23,8 +21,6 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-		
 
 </head>
 
@@ -43,13 +39,15 @@
 				<div class="col-lg-6">
 					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
 						<a class="nav-link active" href="">
-							{% if adm.pic.url %}
-							<img src="{{adm.pic.url}}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
+							{% if ins.pic.url %}
+							<img src="{{ins.pic.url}}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
 							{% else %}
 							<img src="{% static 'default.jpg' %}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
 							{% endif %}
 						</a>
-						<span class="h4" style = "color:aliceblue">{{adm.fname}} {{adm.lname}}</span>
+					
+
+						<span class="h4" style = "color:aliceblue">{{ins.fname}} {{ins.lname}}</span>
 					</div>
 				</div>
 			</div>
@@ -74,9 +72,8 @@
 				<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile<i class="icofont-thin-down"></i></a>
 				<ul class="dropdown-menu" aria-labelledby="dropdown03">
 					<li><a class="dropdown-item" href="">View Profile</a></li>
-					<li><a class="dropdown-item" href="">Edit Profile</a></li>
 					<li><a class="dropdown-item" href="">Change Password</a></li>
-					<li><a class="dropdown-item" href="{% url 'admin-logout' %}">Logout</a></li>
+					<li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
 				</ul>
 			  </li>
 			</ul>
@@ -199,4 +196,5 @@
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/contact.js' %}"></script>
 
+  </body>
   </html>

@@ -1,4 +1,4 @@
-{% extends 'table-header.html' %}
+{% extends 'ins-table-header.html' %}
 {% load static %}
 {% block content %}
 
@@ -59,7 +59,7 @@
                         <th>          </th>
                     </tr>
                 </thead>
-                {% for entry in com %}
+                {% for entry in FIRs %}
                 <div class="row">
                   <tbody class="list">
                       
@@ -98,7 +98,7 @@
                         <div class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" data-toggle="dropdow"><i class="icofont-listine-dots"></i></a>
                           <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a class="dropdown-item" href="">View Briefly</a></li>
+                            <li><a class="dropdown-item" href="{% url 'ins-view-one-FIR' entry.id %}">View Briefly</a></li>
                           </ul>
                         </div>
                       </td>

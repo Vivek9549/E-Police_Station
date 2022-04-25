@@ -150,7 +150,7 @@ def add_com(request):
     stationary = Station.objects.all()
     if request.method == 'POST':
         stat = Station.objects.get(id=request.POST['police'])
-        FIR.objects.create(
+        Complaint.objects.create(
             applicant=uid,
             date=request.POST['date'],
             idate=request.POST['rdate'],
@@ -168,6 +168,11 @@ def add_com(request):
         msg = 'Complaint Added'
         return render(request,'add_com.html',{'uid':uid,'stationary':stationary,'msg':msg})
     return render(request,'add_com.html',{'uid':uid,'stationary':stationary})
+
+def view_com(request):
+    uid = User.objects.get(email=request.session['email'])
+    com= Complaint.objects.filter(applicant=uid)
+    return render(request,'view-com.html',{'uid':uid,'com':com})
 
 def feedback(request):
    uid = User.objects.get(email=request.session['email'])

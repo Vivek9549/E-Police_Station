@@ -1,3 +1,5 @@
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="zxx">
@@ -5,8 +7,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
   <meta name="author" content="themefisher.com">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Metroploitan Police Service </title>
 
@@ -24,9 +24,21 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-		
+  <!-- Page plugins -->
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
 
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'assets/img/brand/favicon.png' %}" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  
 </head>
+
 
 <body id="top">
 
@@ -42,14 +54,10 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-						<a class="nav-link active" href="">
-							{% if adm.pic.url %}
-							<img src="{{adm.pic.url}}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
-							{% else %}
-							<img src="{% static 'default.jpg' %}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
-							{% endif %}
+						<a class="nav-link active" href="{% url 'view-profile' %}">
+							<img src="{{ins.pic.url}}" alt = "image placeholder" style = "border-radius: 3cm; height : 1.5cm ; width : 1.5cm;">
 						</a>
-						<span class="h4" style = "color:aliceblue">{{adm.fname}} {{adm.lname}}</span>
+						<span class="h4" style = "color:aliceblue">{{ins.fname}} {{ins.lname}}</span>
 					</div>
 				</div>
 			</div>
@@ -66,17 +74,17 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link active" href="{% url 'ins-index' %}">
+				<a class="nav-link active" href="{% url 'home' %}">
 					<span class="nav-link-text">Home</span>
 				  </a>
 			  </li>
               <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile<i class="icofont-thin-down"></i></a>
 				<ul class="dropdown-menu" aria-labelledby="dropdown03">
-					<li><a class="dropdown-item" href="">View Profile</a></li>
-					<li><a class="dropdown-item" href="">Edit Profile</a></li>
-					<li><a class="dropdown-item" href="">Change Password</a></li>
-					<li><a class="dropdown-item" href="{% url 'admin-logout' %}">Logout</a></li>
+					<li><a class="dropdown-item" href="{% url 'view-profile' %}">View Profile</a></li>
+					<li><a class="dropdown-item" href="{% url 'edit-profile' %}">Edit Profile</a></li>
+					<li><a class="dropdown-item" href="{% url 'password' %}">Change Password</a></li>
+					<li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
 				</ul>
 			  </li>
 			</ul>
@@ -199,4 +207,5 @@
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/contact.js' %}"></script>
 
+  </body>
   </html>
