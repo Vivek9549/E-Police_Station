@@ -66,9 +66,12 @@ class Complaint(models.Model):
 
 
     def __str__(self):
-        return self.applicant.fname + ' >> ' + self.idate
+        return self.applicant.fname + '  ' + self.applicant.lname
 
 class Feedback(models.Model):
     applicant= models.ForeignKey(User,on_delete=models.CASCADE)
     feed=models.TextField()
+
+    def __str__(self):
+        return self.applicant.fname + ' ' + self.applicant.lname
 

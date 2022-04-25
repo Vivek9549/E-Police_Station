@@ -176,6 +176,12 @@ def view_com(request):
 
 def feedback(request):
    uid = User.objects.get(email=request.session['email'])
+   if request.method == 'POST':
+        Feedback.objects.create(
+            applicant=uid,
+            feed=request.POST['feed']
+
+        )
    return render(request,'feedback.html',{'uid':uid})
 
 

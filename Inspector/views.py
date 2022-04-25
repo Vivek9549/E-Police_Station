@@ -20,8 +20,6 @@ def ins_index(request):
     ins = Ins.objects.get(email=request.session['email'])
     return render(request,'ins-index.html',{'ins':ins})
 
-
-
 def ins_view_FIR(request):
     ins = Ins.objects.get(email=request.session['email'])
     FIRs= FIR.objects.all()
