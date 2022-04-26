@@ -1,7 +1,6 @@
-{% extends 'table-header.html' %}
+{% extends 'ins-table-header.html' %}
 {% load static %}
 {% block content %}
-
 
 <section class="page-title back-9550">
 	<div class="overlay"></div>
@@ -99,7 +98,12 @@
                         <div class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" data-toggle="dropdow"><i class="icofont-listine-dots"></i></a>
                           <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a class="dropdown-item" href="{% url 'view-one-com' entry.id %}">View Briefly</a></li>
+                            <li><a class="dropdown-item" href="{% url 'ins-manage-view' entry.id %}">View Briefly</a></li>
+                            {% if entry.status %}
+                            <li><a class="dropdown-item" href="{% url 'ins-disable' entry.id %}">Mark Unapproved</a></li>
+                            {% else %}
+                            <li><a class="dropdown-item" href="{% url 'ins-enable' entry.id %}">Mark Approved</a></li>
+                            {% endif %}
                           </ul>
                         </div>
                       </td>

@@ -29,3 +29,37 @@ def ins_view_one_FIR(request,pk):
     ins = Ins.objects.get(email=request.session['email'])
     fir=FIR.objects.get(id=pk)
     return render(request, 'ins-view-one-FIR.html',{'ins':ins,'fir':fir})
+
+def ins_view_com(request):
+    ins = Ins.objects.get(email=request.session['email'])
+    com=Complaint.objects.all()
+    return render(request,'ins-view-com.html',{'ins':ins,'com':com})
+
+def ins_view_one_com(request,pk):
+    ins = Ins.objects.get(email=request.session['email'])
+    com=Complaint.objects.get(id=pk)
+    return render(request, 'ins-view-one-com.html',{'ins':ins,'com':com})
+
+def ins_manage_com(request):
+    ins = Ins.objects.get(email=request.session['email'])
+    com=Complaint.objects.all()
+    return render(request,'ins-manage-com.html',{'ins':ins,'com':com})
+
+def ins_disable(request,pk):
+    ins = Ins.objects.get(email=request.session['email'])
+    com=Complaint.objects.get(id=pk)
+    com.status = False
+    com.save()
+    return redirect('ins-manage-com')
+
+def ins_enable(request,pk):
+    ins = Ins.objects.get(email=request.session['email'])
+    com=Complaint.objects.get(id=pk)
+    com.status = True
+    com.save()
+    return redirect('ins-manage-com')
+
+def ins_manage_view(request,pk):
+    ins = Ins.objects.get(email=request.session['email'])
+    com=Complaint.objects.get(id=pk)
+    return render(request, 'ins-manage-view.html',{'ins':ins,'com':com})

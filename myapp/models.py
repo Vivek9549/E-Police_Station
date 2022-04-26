@@ -63,7 +63,7 @@ class Complaint(models.Model):
     dob= models.DateField(null=True)
     iaddress= models.CharField(max_length=100)
     status=models.BooleanField(default=False)
-
+ 
 
     def __str__(self):
         return self.applicant.fname + '  ' + self.applicant.lname

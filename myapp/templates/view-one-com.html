@@ -1,7 +1,6 @@
-{% extends 'ins-header.html' %}
+{% extends 'table-header.html' %}
 {% load static %}
 {% block content %}
-
 <section class="page-title back-9550">
 	<div class="overlay"></div>
 	<div class="container">
@@ -40,7 +39,7 @@
                             <div class="form-group">
                                 <h6>Choose the Police Station</h6>
                                 <select name="police" class="form-control" id="exampleFormControlSelect1" disabled>
-                                  <option>{{fir.police.station}}</option>
+                                  <option>{{com.police.station}}</option>
                                   
                                 </select>
                             </div>
@@ -49,78 +48,76 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Date of the Occurence</h6>
-                                <input name="date"  type="text" class="form-control" value="{{fir.date}}" disabled>
+                                <input name="date"  type="text" class="form-control" value="{{com.date}}" disabled>
                             </div>
                         </div>
                          <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Date of the information received</h6>
-                                <input name="rdate"  type="text" class="form-control" value="{{fir.idate}}" disabled>
+                                <input name="rdate"  type="text" class="form-control" value="{{com.idate}}" disabled>
                             </div>
                         </div>
                          <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Time of information received</h6>
-                                <input name="time" type="text" class="form-control" value="{{fir.time}}" disabled>
+                                <input name="time" type="text" class="form-control" value="{{com.time}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Address of Occurence</h6>
-                                <input name="address" type="text" class="form-control" value="{{fir.address}}" disabled>
+                                <input name="address" type="text" class="form-control" value="{{com.address}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Landmark of Occurence</h6>
-                            <input name="landmark" type="text" class="form-control" value="{{fir.landmark}}" disabeld>
+                            <input name="landmark" type="text" class="form-control" value="{{com.landmark}}" disabeld>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Charges of the case</h6>
-                                <input name="charge" type="text" class="form-control" value="{{fir.charge}}" disabled>
+                                <input name="charge" type="text" class="form-control" value="{{com.charge}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Number of Victim</h6>
-                                <input name="victim" type="number" class="form-control" value="{{fir.victim}}" disabled>
+                                <input name="victim" type="number" class="form-control" value="{{com.victim}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Informant's first name</h6>
-                                <input name="fname" type="text" class="form-control" value="{{fir.ifname}}" disabled>
+                                <input name="fname" type="text" class="form-control" value="{{com.ifname}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Informant's last name</h6>
-                                <input name="lname" type="text" class="form-control" value="{{fir.ilname}}" disabled>
+                                <input name="lname" type="text" class="form-control" value="{{com.ilname}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Date of the Birth of Informant</h6>
-                                <input name="dob"  type="text" class="form-control" value="{{fir.dob}}" disabled>
+                                <input name="dob"  type="text" class="form-control" value="{{com.dob}}" disabled>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <h6>Address of the Informant</h6>
-                                <input name="info_address" type="text" value="{{fir.iaddress}}" class="form-control" disabled>
+                                <input name="info_address" type="text" value="{{com.iaddress}}" class="form-control" disabled>
                             </div>
                         </div>
                         
                     </div>
                     <div class="text-center">
-                        <a href="{% url 'ins-view-FIR' %}" class="btn btn-main btn-round-full">GO BACK</a>
+                        <a href="{% url 'view-com' %}" class="btn btn-main btn-round-full">GO BACK</a>
                     </div>
             </div>
         </div>
     </div>
 </section>
-
-
 {% endblock %}

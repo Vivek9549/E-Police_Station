@@ -174,6 +174,11 @@ def view_com(request):
     com= Complaint.objects.filter(applicant=uid)
     return render(request,'view-com.html',{'uid':uid,'com':com})
 
+def view_one_com(request,pk):
+    uid = User.objects.get(email=request.session['email'])
+    com=Complaint.objects.get(id=pk)
+    return render(request, 'view-one-com.html',{'uid':uid,'com':com})
+
 def feedback(request):
    uid = User.objects.get(email=request.session['email'])
    if request.method == 'POST':
