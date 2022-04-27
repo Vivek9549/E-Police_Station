@@ -17,6 +17,7 @@ class Station(models.Model):
 
     station = models.CharField(max_length=50)
     img = models.FileField(upload_to='Station', default='police station.jpg')
+    address= models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.station
