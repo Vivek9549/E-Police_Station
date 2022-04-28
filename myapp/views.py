@@ -180,14 +180,19 @@ def view_one_com(request,pk):
     return render(request, 'view-one-com.html',{'uid':uid,'com':com})
 
 def feedback(request):
-   uid = User.objects.get(email=request.session['email'])
-   if request.method == 'POST':
+    uid = User.objects.get(email=request.session['email'])
+    if request.method == 'POST':
         Feedback.objects.create(
             applicant=uid,
+            title=request.POST['title'],
             feed=request.POST['feed']
+            
 
         )
-   return render(request,'feedback.html',{'uid':uid})
+        msg='Feedback Sent'
+        return render(request,'feedback.html',{'uid':uid, 'msg':msg })
+    return render(request,'feedback.html',{'uid':uid})
+    
 
 
 
@@ -225,6 +230,11 @@ def password(request):
 def logout(request): 
     del request.session['email']
     return redirect('index')
+
+# Emergency 
+
+def emergency(request):
+    return render(request,'emergency.html')
 
 
 

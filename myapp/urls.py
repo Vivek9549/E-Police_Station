@@ -18,6 +18,7 @@ urlpatterns = [
     path('feedback/',views.feedback,name='feedback'),
     path('view-com/',views.view_com,name='view-com'),
     path('view-one-com/<int:pk>',views.view_one_com,name='view-one-com'),
+    path('emergency',views.emergency,name='emergency')
     
 
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'myapp',
     'Admin',
     'Inspector',
+    'Commissioner',
 ]
 
 MIDDLEWARE = [

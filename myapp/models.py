@@ -71,7 +71,9 @@ class Complaint(models.Model):
 
 class Feedback(models.Model):
     applicant= models.ForeignKey(User,on_delete=models.CASCADE)
+    title= models.CharField(max_length=100)
     feed=models.TextField()
+    
 
     def __str__(self):
         return self.applicant.fname + ' ' + self.applicant.lname

@@ -96,6 +96,31 @@ def admin_subins(request):
     sub= Sub.objects.all()
     return render(request,'admin-sub.html',{'adm':adm,'sub':sub})
 
+def admin_one_sub(request,pk):
+    adm = Admin.objects.get(email=request.session['email'])
+    sub = Sub.objects.get(id=pk)
+    if request.method == 'POST':
+        sub.fname = request.POST['fname']
+        sub.lname = request.POST['lname']
+        sub.phone = request.POST['phone']
+        if 'pic' in request.FILES:
+            sub.pic = request.FILES['pic']
+        
+        sub.save()
+    return render(request, 'admin-one-sub.html',{'adm':adm,'sub':sub})
+
+def admin_feedback(request):
+    adm = Admin.objects.get(email=request.session['email'])
+    feed = Feedback.objects.all()
+    return render(request,'admin-feedback.html',{'adm':adm,'feed':feed})
+
+def admin_efeed(request,pk):
+    adm = Admin.objects.get(email=request.session['email'])
+    feed = Feedback.objects.get(id=pk)
+    return render(request,'admin-efeedback.html',{'adm':adm,'feed':feed })
+
+
+
 
 
 

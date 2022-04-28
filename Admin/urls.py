@@ -15,6 +15,9 @@ urlpatterns = [
     path('admin-inspector/',views.admin_inspector,name='admin-inspector'),
     path('admin-one-ins/<int:pk>',views.admin_one_ins,name='admin-one-ins'),
     path('admin-subins/',views.admin_subins,name='admin-subins'),
+    path('admin-one-sub/<int:pk>',views.admin_one_sub,name='admin-one-sub'),
+    path('admin-feedback/',views.admin_feedback,name='admin-feedback'),
+    path('admin-efeedback/<int:pk>',views.admin_efeed,name='admin-efeedback'),
 
 
 
