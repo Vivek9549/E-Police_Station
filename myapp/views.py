@@ -240,6 +240,11 @@ def rules(request):
     return render(request,'rules.html')
 
 def missing(request):
-    return render(request,'missing,html')
+    miss=Missing.objects.all()
+    return render(request,'missing.html',{'miss':miss})
+
+def missing_one(request,pk):
+    miss=Missing.objects.get(id=pk)
+    return render(request, 'missing-one.html',{'miss':miss})
 
 

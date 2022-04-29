@@ -21,6 +21,7 @@ urlpatterns = [
     path('emergency/',views.emergency,name='emergency'),
     path('rules/',views.rules,name='rules'),
     path('missing/',views.missing,name='missing'),
+    path('missing-one/<int:pk>',views.missing_one,name='missing-one'),
     
 
 ]

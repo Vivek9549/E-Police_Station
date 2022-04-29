@@ -86,7 +86,9 @@ class Missing(models.Model):
     height=models.CharField(max_length=10)
     weight=models.CharField(max_length=10)
     contact=models.CharField(max_length=10)
+    status=models.BooleanField(default=False)
     pic=models.FileField(null = True, blank=True, default='default.jpg')
+
 
     def __str__(self):
         return self.fname + ' ' + self.lname

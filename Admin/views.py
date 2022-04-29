@@ -155,6 +155,19 @@ def admin_password(request):
         return render(request,'admin-password.html',{'adm':adm,'msg':'Old Password is incorrect'})
     return render(request,'admin-password.html',{'adm':adm})
 
+def category(request):
+    adm=Admin.objects.get(email=request.session['email'])
+    cate=Category.objects.all()
+    return render(request,'category.html',{'adm':adm,'cate':cate })
+
+def category_one(request,pk):
+    adm=Admin.objects.get(email=request.session['email'])
+    cate=Category.objects.get(id=pk)
+    if request.method=='POST':
+        cate.category=request.POST['category']
+        cate.save()
+    return render(request,'category.html',{'adm':adm,'cate':cate })
+    
 
 
 

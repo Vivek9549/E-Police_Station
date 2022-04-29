@@ -23,5 +23,8 @@ urlpatterns = [
     path('admin-edit-profile/',views.admin_edit_profile,name='admin-edit-profile'),
     path('admin-view-profile/',views.admin_view_profile,name='admin-view-profile'),
     path('admin-change-password/',views.admin_password,name='admin-change-password'),
+    path('category/',views.category,name='category'),
+    path('category-one/<int:pk>',views.category_one,name='category-one')
+    
 
 ]
