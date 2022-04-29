@@ -89,5 +89,32 @@ def com_con(request):
     con=Cons.objects.all()
     return render(request, 'com-con.html',{'com':com,'con':con})
 
+def com_edit_profile(request):
+    com = Com.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        com.fname = request.POST['fname']
+        com.lname = request.POST['lname']
+        
+        if 'pic' in request.FILES:
+            com.pic = request.FILES['pic']
+        com.save()
+    return render(request,'com-eprofile.html',{'com':com})
+
+def com_view_profile(request):
+    com = Com.objects.get(email=request.session['email'])
+    return render(request,'com-view-profile.html',{'com':com})
+
+def com_password(request):
+    com = Com.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        if request.POST['opassword'] == com.password:
+            if request.POST['password'] == request.POST['rpassword']:
+                com.password = request.POST['password']
+                com.save()
+                return render(request,'com-password.html',{'com':com,'msg':'Password has been changed'})
+            return render(request,'com-password.html',{'com':com,'msg':'New entered password are different'})
+        return render(request,'com-password.html',{'com':com,'msg':'Old Password is incorrect'})
+    return render(request,'com-password.html',{'com':com})
+
 
 

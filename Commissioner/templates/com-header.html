@@ -73,9 +73,9 @@
               <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile<i class="icofont-thin-down"></i></a>
 				<ul class="dropdown-menu" aria-labelledby="dropdown03">
-					<li><a class="dropdown-item" href="">View Profile</a></li>
-					<li><a class="dropdown-item" href="">Edit Profile</a></li>
-					<li><a class="dropdown-item" href="">Change Password</a></li>
+					<li><a class="dropdown-item" href="{% url 'com-view-profile' %}">View Profile</a></li>
+					<li><a class="dropdown-item" href="{% url 'com-edit-profile' %}">Edit Profile</a></li>
+					<li><a class="dropdown-item" href="{% url 'com-change-password' %}">Change Password</a></li>
 					<li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
 				</ul>
 			  </li>

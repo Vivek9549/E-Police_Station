@@ -120,7 +120,40 @@ def admin_efeed(request,pk):
     return render(request,'admin-efeedback.html',{'adm':adm,'feed':feed })
 
 
+def admin_emegency(request):
+    adm = Admin.objects.get(email=request.session['email'])
+    return render(request,'admin-emergency.html',{'adm':adm})
 
+def admin_rules(request):
+    adm = Admin.objects.get(email=request.session['email'])
+    return render(request,'admin-rules.html',{'adm':adm})
+
+def admin_edit_profile(request):
+    adm=Admin.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        adm.fname = request.POST['fname']
+        adm.lname = request.POST['lname']
+        
+        if 'pic' in request.FILES:
+            adm.pic = request.FILES['pic']
+        adm.save()
+    return render(request,'admin-edit-profile.html',{'adm':adm})
+
+def admin_view_profile(request):
+    adm=Admin.objects.get(email=request.session['email'])
+    return render(request,'admin-view-profile.html',{'adm':adm})
+
+def admin_password(request):
+    adm=Admin.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        if request.POST['opassword'] == adm.password:
+            if request.POST['password'] == request.POST['rpassword']:
+                adm.password = request.POST['password']
+                adm.save()
+                return render(request,'admin-password.html',{'adm':adm,'msg':'Password has been changed'})
+            return render(request,'admin-password.html',{'adm':adm,'msg':'New entered password are different'})
+        return render(request,'admin-password.html',{'adm':adm,'msg':'Old Password is incorrect'})
+    return render(request,'admin-password.html',{'adm':adm})
 
 
 

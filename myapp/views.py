@@ -236,5 +236,10 @@ def logout(request):
 def emergency(request):
     return render(request,'emergency.html')
 
+def rules(request):
+    return render(request,'rules.html')
+
+def missing(request):
+    return render(request,'missing,html')
 
 

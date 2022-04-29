@@ -63,3 +63,30 @@ def ins_manage_view(request,pk):
     ins = Ins.objects.get(email=request.session['email'])
     com=Complaint.objects.get(id=pk)
     return render(request, 'ins-manage-view.html',{'ins':ins,'com':com})
+
+def ins_edit_profile(request):
+    ins = Ins.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        ins.fname = request.POST['fname']
+        ins.lname = request.POST['lname']
+        
+        if 'pic' in request.FILES:
+            ins.pic = request.FILES['pic']
+        ins.save()
+    return render(request,'ins-eprofile.html',{'ins':ins})
+
+def ins_view_profile(request):
+    ins = Ins.objects.get(email=request.session['email'])
+    return render(request,'ins-view-profile.html',{'ins':ins})
+
+def ins_password(request):
+    ins = Ins.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        if request.POST['opassword'] == ins.password:
+            if request.POST['password'] == request.POST['rpassword']:
+                ins.password = request.POST['password']
+                ins.save()
+                return render(request,'ins-password.html',{'ins':ins,'msg':'Password has been changed'})
+            return render(request,'ins-password.html',{'ins':ins,'msg':'New entered password are different'})
+        return render(request,'ins-password.html',{'ins':ins,'msg':'Old Password is incorrect'})
+    return render(request,'ins-password.html',{'ins':ins})

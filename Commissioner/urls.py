@@ -14,6 +14,9 @@ urlpatterns = [
     path('com-station',views.com_station,name='com-station'),
     path('com-view-station/<int:pk>',views.com_view_station,name='com-view-station'),
     path('com-con',views.com_con,name='com-con'),
+    path('com-edit-profile/',views.com_edit_profile,name='com-edit-profile'),
+    path('com-view-profile/',views.com_view_profile,name='com-view-profile'),
+    path('com-change-password/',views.com_password,name='com-change-password'),
 
 
 

@@ -78,3 +78,15 @@ class Feedback(models.Model):
     def __str__(self):
         return self.applicant.fname + ' ' + self.applicant.lname
 
+class Missing(models.Model):
+    fname=models.CharField(max_length=50)
+    lname=models.CharField(max_length=50)
+    address=models.CharField(max_length=100)
+    area=models.CharField(max_length=50)
+    height=models.CharField(max_length=10)
+    weight=models.CharField(max_length=10)
+    contact=models.CharField(max_length=10)
+    pic=models.FileField(null = True, blank=True, default='default.jpg')
+
+    def __str__(self):
+        return self.fname + ' ' + self.lname

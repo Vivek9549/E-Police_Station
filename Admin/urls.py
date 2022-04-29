@@ -18,8 +18,10 @@ urlpatterns = [
     path('admin-one-sub/<int:pk>',views.admin_one_sub,name='admin-one-sub'),
     path('admin-feedback/',views.admin_feedback,name='admin-feedback'),
     path('admin-efeedback/<int:pk>',views.admin_efeed,name='admin-efeedback'),
-
-
-
+    path('admin-emergency/',views.admin_emegency,name='admin-emergency'),
+    path('admin-rules/',views.admin_rules,name='admin-rules'),
+    path('admin-edit-profile/',views.admin_edit_profile,name='admin-edit-profile'),
+    path('admin-view-profile/',views.admin_view_profile,name='admin-view-profile'),
+    path('admin-change-password/',views.admin_password,name='admin-change-password'),
 
 ]
